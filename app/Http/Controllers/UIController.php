@@ -48,12 +48,22 @@ class UIController extends Controller
 
     public function KasKeluar()
     {
-
+        $meta = [
+            'title' => 'Simba Kas Masuk',
+            'diskripsi' => 'Kas Masuk - Sistem Informasi Pengelolaan Kas',
+            'app_name' => 'Simba'
+        ];
+        return view('/heena/KasKeluar', [ 'meta' => $meta ]);
     }
 
     public function RekapKas()
     {
-
+        $meta = [
+            'title' => 'Simba Kas Masuk',
+            'diskripsi' => 'Kas Masuk - Sistem Informasi Pengelolaan Kas',
+            'app_name' => 'Simba'
+        ];
+        return view('/heena/Rekap', [ 'meta' => $meta ]);
     }
 
     public function RekapKasMasuk()

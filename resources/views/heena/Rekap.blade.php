@@ -218,112 +218,84 @@
                     </div><!--end row-->
                     <!-- end page title end breadcrumb -->
                     
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header bg-warning-50">
-                                    <h4 class="card-title text-white"><i class="fa fa-plus mr-2"></i>Tambah Kas Masuk</h4>
-                                    <p class="text-white mb-0">Form Tambah Kas Masuk</p>
-                                </div><!--end card-header-->
-                                <br/>
-                                <div class="col-md-12">
-                                            <div class="card">
-                                                <div class="card-header bg-primary-50">
-                                                    <h4 class="card-title text-white">Upload Nota</h4>
-                                                    <p class="text-white mb-0">Upload Bukti Nota Jika Tersedia</p>
-                                                </div><!--end card-header-->
-                                                <div class="card-body">
-                                                    <input type="file" id="input-file-now" class="dropify" />                                                   
-                                                </div><!--end card-body-->
-                                            </div><!--end card-->
-                                        </div><!--end col-->
-                                <div class="card-body bootstrap-select-1">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Nominal</label>
-                                            <input type="text" name="nominal" class="form-control">
-                                        </div><!-- end col -->      
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Tanggal</label>
-                                            <input type="text" name="tanggal" class="form-control" placeholder="Pilih Tanggal" id="mdate">
-                                        </div><!-- end col --> 
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Masuk Ke</label>
-                                            <select name="rek" class="custom-select">
-                                                <option value="1">Cash</option>
-                                                <option value="2">Rek Mandiri</option>
-                                                <option value="3">Rek BCA</option>
-                                            </select>
-                                        </div><!-- end col --> 
-                                        <div class="col-md-12">
-                                            <label class="mb-3">Keterangan</label>
-                                            <textarea name="keterangan" class="form-control"></textarea>
-                                        </div>
+                                <div class="card bg-primary text-white text-center p-3">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>Tujuanku Menabung adalah untuk foya-foya</p>
+                                        <footer class="blockquote-footer text-white">
+                                        <small>
+                                            <cite title="Source Title">Heena</cite>
+                                        </small>
+                                        </footer>
+                                    </blockquote>
+                                </div>
 
-                                        
-                                        <div class="col-md-3">
-                                            <br/>
-                                            <button class="btn btn-primary">Tambah</button>
-                                        </div><!-- end col -->                                                                
-                                    </div><!-- end row --> 
-                                </div><!-- end card-body --> 
-                            </div> <!-- end card -->                               
-                        </div> <!-- end col -->
-                    </div>
-                    
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header bg-warning-50">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title text-white"><i class="fas fa-th-list"></i> List Kas Masuk</h4>                      
+                                            <h4 class="card-title text-white"><i class="fas fa-th-list"></i> Rekap Kas</h4>                      
                                         </div><!--end col-->                                        
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
                                 <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table mb-0 table-bordered">
-                                            <thead class="thead-light">
-                                                <tr>
-                                                    <th class="border-top-0">#</th>                                                            
-                                                    <th class="border-top-0">Tanggal</th>
-                                                    <th class="border-top-0">Nominal</th>
-                                                    <th class="border-top-0">Masuk Ke</th>
-                                                    <th class="border-top-0">Diskripsi</th>
-                                                    <th class="border-top-0">Aksi</th>
-                                                    
-                                                </tr><!--end tr-->
-                                            </thead>
-                                            <tbody>
-                                                <tr>                                                        
-                                                    <td>1</td>                                                            
-                                                    <td>1 Jan 2021</td>
-                                                    <td>Rp.300.000</td>
-                                                    <td>Cash</td>
-                                                    <td>Pemasukan Kas Dari Anggota</td>
-                                                    <td>                                                       
-                                                        <a href="#" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
-                                                        <a href="#"><i class="las la-trash-alt text-danger font-18"></i></a>
-                                                    </td>
-                                                </tr><!--end tr-->     
-                                                <tr>                                                        
-                                                    <td>1</td>                                                            
-                                                    <td>2 Jan 2021</td>
-                                                    <td>Rp.420.000</td>
-                                                    <td>Bank Mandiri</td>
-                                                    <td>Pemasukan Kas Dari Hasil Event Turnamen</td>
-                                                    <td>                                                       
-                                                        <a href="#" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
-                                                        <a href="#"><i class="las la-trash-alt text-danger font-18"></i></a>
-                                                    </td>
-                                                </tr><!--end tr-->    
-                                                
-                                                
-                                                                     
-                                            </tbody>
-                                        </table> <!--end table-->                                               
-                                    </div><!--end /div-->
+                                    
+                                <div class="row">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-header bg-warning-50">
+                                            <h4 class="card-title text-white">Rekap Semua Kas</h4>
+                                        </div><!--end card-header-->
+                                        <div class="card-body">
+                                            <p class="card-text text-muted ">Rekap Semua Kas.</p>
+                                            <a href="#" class="btn btn-primary btn-sm">Klik Disini</a>
+                                        </div><!--end card-body-->                               
+                                    </div><!--end card-->
+                                    
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-header bg-primary-50">
+                                            <h4 class="card-title text-white">Rekap Kas Rekening</h4>
+                                        </div><!--end card-header-->
+                                        <div class="card-body">
+                                            <p class="card-text text-muted ">Rekap Semua Kas.</p>
+                                            <a href="#" class="btn btn-primary btn-sm">Klik Disini</a>
+                                        </div><!--end card-body-->                               
+                                    </div><!--end card-->
+                                    
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-header bg-success-50">
+                                            <h4 class="card-title text-white">Rekap Kas Cash</h4>
+                                        </div><!--end card-header-->
+                                        <div class="card-body">
+                                            <p class="card-text text-muted ">Rekap Semua Kas.</p>
+                                            <a href="#" class="btn btn-primary btn-sm">Klik Disini</a>
+                                        </div><!--end card-body-->                               
+                                    </div><!--end card-->
+                                    
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-header bg-pink-50">
+                                            <h4 class="card-title text-white">Rekap Kas Cash</h4>
+                                        </div><!--end card-header-->
+                                        <div class="card-body">
+                                            <p class="card-text text-muted ">Rekap Semua Kas.</p>
+                                            <a href="#" class="btn btn-primary btn-sm">Klik Disini</a>
+                                        </div><!--end card-body-->                               
+                                    </div><!--end card-->
+                                    
+                                </div>
+
+                                </div>
+                                    
                                 </div><!--end card-body--> 
                             </div><!--end card--> 
                         </div> <!--end col-->   

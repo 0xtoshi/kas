@@ -431,13 +431,13 @@
                                             <tbody>
                                                 <tr>                                                        
                                                     <td>01/01/2021</td>                                                            
-                                                    <td><button type="button" class="btn btn-success waves-effect waves-light"><i data-feather="arrow-down-circle" class="align-self-center menu-icon"></i> Kas Masuk</button> </td>
+                                                    <td><span class="badge badge-success"><i data-feather="arrow-down-circle" class="align-self-center menu-icon"></i> Kas Masuk</span></td>
                                                     <td>Rp. 300.000</td>
                                                     <td>Pendapatan Parkir</td>
                                                 </tr><!--end tr-->     
                                                 <tr>                                                        
                                                     <td>02/01/2021</td>                                                            
-                                                    <td><button type="button" class="btn btn-danger waves-effect waves-light"> <i data-feather="arrow-up-circle" class="align-self-center menu-icon"></i> Kas Keluar</button> </td>
+                                                    <td><span class="badge badge-danger"><i data-feather="arrow-up-circle" class="align-self-center menu-icon"></i> Kas Keluar</span></td>
                                                     <td>Rp. 200.000</td>
                                                     <td>Beli Perlengkapan</td>
                                                 </tr><!--end tr--> 

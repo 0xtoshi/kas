@@ -217,13 +217,23 @@
                         </div><!--end col-->
                     </div><!--end row-->
                     <!-- end page title end breadcrumb -->
-                    
+                    <div class="card bg-pink-50 text-white text-center p-3">
+                                    <blockquote class="blockquote mb-0">
+                                        <p class="text-white">Tujuanku Menabung adalah biar bisa foya-foya</p>
+                                        <footer class="blockquote-footer text-white">
+                                        <small>
+                                            <cite title="Source Title">Heena</cite>
+                                        </small>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header bg-warning-50">
-                                    <h4 class="card-title text-white"><i class="fa fa-plus mr-2"></i>Tambah Kas Masuk</h4>
-                                    <p class="text-white mb-0">Form Tambah Kas Masuk</p>
+                                    <h4 class="card-title text-white"><i class="fa fa-plus mr-2"></i>Tambah Kas Keluar</h4>
+                                    <p class="text-white mb-0">Form Tambah Kas Keluar</p>
                                 </div><!--end card-header-->
                                 <br/>
                                 <div class="col-md-12">
@@ -277,7 +287,7 @@
                                 <div class="card-header bg-warning-50">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title text-white"><i class="fas fa-th-list"></i> List Kas Masuk</h4>                      
+                                            <h4 class="card-title text-white"><i class="fas fa-th-list"></i> List Kas Keluar</h4>                      
                                         </div><!--end col-->                                        
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
