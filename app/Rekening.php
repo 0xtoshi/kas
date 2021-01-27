@@ -8,6 +8,7 @@ class Rekening extends Model
 {
     protected $fillable = [
         'tipe',
-        'no_rek'
+        'no_rek',
+        'nama'
     ];
 }
