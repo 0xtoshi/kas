@@ -11,12 +11,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+        <link href="/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
+        <link href="/plugins/animate/animate.css" rel="stylesheet" type="text/css">
 
         <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -32,7 +35,7 @@
                                 <div class="card-body p-0 auth-header-box">
                                     <div class="text-center p-3">
                                         <a href="index.html" class="logo logo-admin">
-                                            <img src="assets/images/logo-sm-dark.png" height="50" alt="logo" class="auth-logo">
+                                            <img src="/assets/images/logo-sm-dark.png" height="50" alt="logo" class="auth-logo">
                                         </a>
                                         <h4 class="mt-3 mb-1 font-weight-semibold text-white font-18">{{ $meta['title'] }}</h4>   
                                         <p class="text-muted  mb-0">{{ $meta['diskripsi'] }}</p>  
@@ -48,7 +51,7 @@
                                      <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div class="tab-pane active p-3" id="LogIn_Tab" role="tabpanel">                                        
-                                            <form class="form-horizontal auth-form" action="">
+                                            <form class="form-horizontal auth-form" id="simba_login" action="">
                 
                                                 <div class="form-group mb-2">
                                                     <label for="username">Username</label>
@@ -67,13 +70,12 @@
                                                 <div class="form-group mb-2">
                                                     <label for="tipe">Pilih Tipe Anda</label>                                            
                                                     <div class="input-group">                                  
-                                                    <select name="tipe" id="tipe" class="custom-select">
-                                                        <option selected="">Administrator</option>
-                                                        <option value="1">Lurah</option>
-                                                        <option value="2">Ketua</option>
-                                                        <option value="3">Bendahara</option>
-                                                        <option value="3">Wakil Bendahara</option>
-                                                        <option value="3">Anggota</option>
+                                                    <select name="role" id="tipe" class="custom-select">
+                                                        <option value="Administrator" selected="">Administrator</option>
+                                                        <option value="Ketua">Ketua</option>
+                                                        <option value="Bendahara">Bendahara</option>
+                                                        <option value="Wakil Bendahara">Wakil Bendahara</option>
+                                                        <option value="Anggota">Anggota</option>
                                                     </select>
                                                     </div>                               
                                                 </div><!--end form-group--> 
@@ -84,7 +86,7 @@
                     
                                                 <div class="form-group mb-0 row">
                                                     <div class="col-12">
-                                                        <button class="btn btn-primary btn-block waves-effect waves-light" type="button">Log In <i class="fas fa-sign-in-alt ml-1"></i></button>
+                                                        <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Log In <i class="fas fa-sign-in-alt ml-1"></i></button>
                                                     </div><!--end col--> 
                                                 </div> <!--end form-group-->                           
                                             </form><!--end form-->
@@ -108,11 +110,46 @@
 
 
         <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/feather.min.js"></script>
-        <script src="assets/js/simplebar.min.js"></script>
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/waves.js"></script>
+        <script src="/assets/js/feather.min.js"></script>
+        <script src="/assets/js/simplebar.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+
+        <script>
+        $(document).ready(() => {
+          $('form[id=simba_login]').submit((e) => {
+            e.preventDefault();
+            var simba_data = $('form[id=simba_login]').serialize();
+            console.log(simba_data);
+            $.ajax({
+              url: '/pengguna/login',
+              type: 'POST',
+              data: simba_data,
+              success : (data) => {
+                //console.log(data);
+                swal({
+                    title: "Suksess 😽!",
+                    text: "Login sukes anda akan diarahkan!",
+                    type: "success",
+                    icon: "success",
+                }).then(function() {
+                    window.location = "/beranda";
+                });
+              },
+              error : (data) => {
+                swal({
+                    title: "Error 😿!",
+                    text: "Pastikan Username dan Password Benar!",
+                    type: "error",
+                    icon: "error",
+                });
+              }
+            })
+          })
+        })
+      </script>
 
         
     </body>

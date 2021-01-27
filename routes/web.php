@@ -37,3 +37,11 @@ Route::get('/', function () {
  Route::get('/user','UiController@User');
  Route::get('/user/profile','UiController@Profile');
  
+
+ /**
+  * Router Request
+  */
+
+  Route::post('/pengguna/buat_akun','PenggunaController@BuatUser'); // Hapus Ini Jika Sudah Live Mode
+  Route::post('/pengguna/login','PenggunaController@LoginUser');
+

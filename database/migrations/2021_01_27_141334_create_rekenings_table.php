@@ -16,6 +16,7 @@ class CreateRekeningsTable extends Migration
         Schema::create('rekenings', function (Blueprint $table) {
             $table->bigIncrements('id_rekening');
             $table->enum('tipe',['Bank','Cash']);
+            $table->text('nama', 15);
             $table->string('no_rek', 15);
             $table->timestamps();
         });

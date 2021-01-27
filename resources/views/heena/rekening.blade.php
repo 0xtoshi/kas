@@ -225,13 +225,20 @@
                                 </div><!--end card-header-->
                                 <div class="card-body bootstrap-select-1">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="mb-3">Nama Bank</label>
+                                        <div class="col-md-4">
+                                            <label class="mb-3">Tipe Rekening</label>
+                                            <select name="role" id="tipe" class="custom-select">
+                                                <option value="Cash" selected="">Cash</option>
+                                                <option value="Bank">Bank</option>
+                                            </select>
+                                        </div><!-- end col -->   
+                                        <div class="col-md-4">
+                                            <label class="mb-3">Nama</label>
                                             <input type="text" name="nama_bank" class="form-control">
                                         </div><!-- end col -->      
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <label class="mb-3">No Rekening</label>
-                                            <input type="text" name="no_rekening" class="form-control">
+                                            <input type="number" name="no_rekening" class="form-control">
                                         </div><!-- end col -->  
                                         <div class="col-md-3">
                                             <br/>
