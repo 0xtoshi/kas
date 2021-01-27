@@ -44,4 +44,6 @@ Route::get('/', function () {
 
   Route::post('/pengguna/buat_akun','PenggunaController@BuatUser'); // Hapus Ini Jika Sudah Live Mode
   Route::post('/pengguna/login','PenggunaController@LoginUser');
+  Route::post('/rekening/tambah','RekeningController@TambahRekening');
+  Route::post('/kas/tambah','KasController@TambahKas');
 

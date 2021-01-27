@@ -17,7 +17,7 @@
         <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="/assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
-        <link href="../plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+        <link href="/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
         <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
     </head>
@@ -224,26 +224,30 @@
                                     <p class="text-white mb-0">Form Tambah Rekening Bank</p>
                                 </div><!--end card-header-->
                                 <div class="card-body bootstrap-select-1">
+                                <form action="" id="tambah_rekening">
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Tipe Rekening</label>
-                                            <select name="role" id="tipe" class="custom-select">
-                                                <option value="Cash" selected="">Cash</option>
-                                                <option value="Bank">Bank</option>
-                                            </select>
-                                        </div><!-- end col -->   
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Nama</label>
-                                            <input type="text" name="nama_bank" class="form-control">
-                                        </div><!-- end col -->      
-                                        <div class="col-md-4">
-                                            <label class="mb-3">No Rekening</label>
-                                            <input type="number" name="no_rekening" class="form-control">
-                                        </div><!-- end col -->  
-                                        <div class="col-md-3">
-                                            <br/>
-                                            <button class="btn btn-primary">Tambah</button>
-                                        </div><!-- end col -->                                                                
+                                       
+                                            <div class="col-md-4">
+                                                <label class="mb-3">Tipe Rekening</label>
+                                                <select name="tipe" id="tipe" class="custom-select">
+                                                    <option value="Cash" selected="">Cash</option>
+                                                    <option value="Bank">Bank</option>
+                                                </select>
+                                            </div><!-- end col -->   
+                                            <div class="col-md-4">
+                                                <label class="mb-3">Nama</label>
+                                                <input type="text" name="nama" class="form-control" required>
+                                            </div><!-- end col -->      
+                                            <div class="col-md-4">
+                                                <label class="mb-3">No Rekening</label>
+                                                <input type="number" name="no_rek" class="form-control" required>
+                                            </div><!-- end col -->  
+                                            <div class="col-md-3">
+                                                <br/>
+                                                <button type="submit" class="btn btn-primary">Tambah</button>
+                                            </div><!-- end col -->
+
+                                        </form>                                                                
                                     </div><!-- end row --> 
                                 </div><!-- end card-body --> 
                             </div> <!-- end card -->                               
@@ -273,24 +277,20 @@
                                                 </tr><!--end tr-->
                                             </thead>
                                             <tbody>
-                                                <tr>                                                        
-                                                    <td>1</td>                                                            
-                                                    <td>Bank Mandiri</td>
-                                                    <td>980000282</td>
+                                            
+                                            @foreach ($data_rek as $key => $value)
+
+                                                <tr id="{{ $value->id_rekening }}" value="{{ $value->nama }}">                                                     
+                                                <td>{{ $key + 1 }}</td>
+                                                <td>{{ $value->nama }}</td>
+                                                <td>{{ $value->no_rek }}</td>
                                                     <td>                                                       
                                                         <a href="#" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
                                                         <a href="#"><i class="las la-trash-alt text-danger font-18"></i></a>
                                                     </td>
                                                 </tr><!--end tr-->     
-                                                <tr>                                                        
-                                                    <td>2</td>
-                                                    <td>Bank Jago</td>
-                                                    <td>10001222</td>
-                                                    <td>                                                       
-                                                        <a href="#" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
-                                                        <a href="#"><i class="las la-trash-alt text-danger font-18"></i></a>
-                                                    </td>
-                                                </tr><!--end tr-->    
+                                                
+                                            @endforeach   
                                                 
                                                                      
                                             </tbody>
@@ -324,11 +324,52 @@
         <script src="/assets/js/simplebar.min.js"></script>
         <script src="/assets/js/moment.js"></script>
         <script src="/plugins/daterangepicker/daterangepicker.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
 
      
 
         <!-- App js -->
         <script src="/assets/js/app.js"></script>
+
+        <script>
+        
+        $('document').ready(() => {
+
+            $('form[id=tambah_rekening]').submit( (e) => {
+            
+            e.preventDefault();
+            
+            var rekening_data =  $('form[id=tambah_rekening]').serialize();
+            $.ajax({
+                url: '/rekening/tambah',
+                type: 'POST',
+                data: rekening_data,
+                success : (data) => {
+                    //console.log(data);
+                    swal({
+                        title: "Suksess 😽!",
+                        text: "Sukses menambahkan Rekening!",
+                        type: "success",
+                        icon: "success",
+                    }).then(function() {
+                        window.location = "rekening";
+                    });
+                },
+                error : (data) => {
+                    swal({
+                        title: "Error 😿!",
+                        text: "Pastikan form telah diisi dengan benar!",
+                        type: "error",
+                        icon: "error",
+                    });
+                }
+                })
+            
+            });
+
+        });
+
+        </script>
         
     </body>
 

@@ -238,33 +238,37 @@
                                             </div><!--end card-->
                                         </div><!--end col-->
                                 <div class="card-body bootstrap-select-1">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Nominal</label>
-                                            <input type="text" name="nominal" class="form-control">
-                                        </div><!-- end col -->      
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Tanggal</label>
-                                            <input type="text" name="tanggal" class="form-control" placeholder="Pilih Tanggal" id="mdate">
-                                        </div><!-- end col --> 
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Masuk Ke</label>
-                                            <select name="rek" class="custom-select">
-                                                <option value="1">Cash</option>
-                                                <option value="2">Rek Mandiri</option>
-                                                <option value="3">Rek BCA</option>
-                                            </select>
-                                        </div><!-- end col --> 
-                                        <div class="col-md-12">
-                                            <label class="mb-3">Keterangan</label>
-                                            <textarea name="keterangan" class="form-control"></textarea>
-                                        </div>
+                                    <form id="tambah_kas" action="#">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="mb-3">Nominal</label>
+                                                <input type="text" name="nominal" class="form-control">
+                                            </div><!-- end col -->      
+                                            <div class="col-md-4">
+                                                <label class="mb-3">Tanggal</label>
+                                                <input type="text" name="tanggal" class="form-control" placeholder="Pilih Tanggal" id="mdate">
+                                            </div><!-- end col --> 
+                                            <div class="col-md-4">
+                                                <label class="mb-3">Masuk Ke</label>
+                                            
+                                                <select name="rek" class="custom-select">
+                                                @foreach ($data_rek as $key => $value)
+                                                    <option value="{{ $value->id_rekening }}">{{$value->nama}}</option>
+                                                @endforeach
+                                                </select>
+                                                
+                                            </div><!-- end col --> 
+                                            <div class="col-md-12">
+                                                <label class="mb-3">Keterangan</label>
+                                                <textarea name="keterangan" class="form-control"></textarea>
+                                            </div>
 
-                                        
-                                        <div class="col-md-3">
-                                            <br/>
-                                            <button class="btn btn-primary">Tambah</button>
-                                        </div><!-- end col -->                                                                
+                                            
+                                            <div class="col-md-3">
+                                                <br/>
+                                                <button class="btn btn-primary">Tambah</button>
+                                            </div><!-- end col --> 
+                                    </form>                                                               
                                     </div><!-- end row --> 
                                 </div><!-- end card-body --> 
                             </div> <!-- end card -->                               
@@ -296,28 +300,20 @@
                                                 </tr><!--end tr-->
                                             </thead>
                                             <tbody>
-                                                <tr>                                                        
-                                                    <td>1</td>                                                            
-                                                    <td>1 Jan 2021</td>
-                                                    <td>Rp.300.000</td>
-                                                    <td>Cash</td>
-                                                    <td>Pemasukan Kas Dari Anggota</td>
+
+                                            @foreach ($data_kas as $key => $value)
+                                                <tr id="{{ $value->id_rekening }}" value="{{ $value->bank }}">                                                       
+                                                    <td>{{ $key + 1 }}</td>
+                                                    <td>@currency($value->tanggal)</td>
+                                                    <td>{{ $value->nominal }}</td>
+                                                    <td>{{ $value->nominal }}</td>
+                                                    <td>{{ $value->keterangan }}</td>
                                                     <td>                                                       
                                                         <a href="#" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
                                                         <a href="#"><i class="las la-trash-alt text-danger font-18"></i></a>
                                                     </td>
                                                 </tr><!--end tr-->     
-                                                <tr>                                                        
-                                                    <td>1</td>                                                            
-                                                    <td>2 Jan 2021</td>
-                                                    <td>Rp.420.000</td>
-                                                    <td>Bank Mandiri</td>
-                                                    <td>Pemasukan Kas Dari Hasil Event Turnamen</td>
-                                                    <td>                                                       
-                                                        <a href="#" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
-                                                        <a href="#"><i class="las la-trash-alt text-danger font-18"></i></a>
-                                                    </td>
-                                                </tr><!--end tr-->    
+                                            @endforeach      
                                                 
                                                 
                                                                      

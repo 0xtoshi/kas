@@ -14,9 +14,9 @@ class RekeningController extends Controller
     public function TambahRekening(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'tipe' => 'required|max:255|min:5',
-            'nama' => 'required|max:255|min:5',
-            'no_rek' => 'required|max:255|min:5',
+            'tipe' => 'required',
+            'nama' => 'required',
+            'no_rek' => 'required',
         ]);
         
         // API Validator Yeyy Ndoro 
@@ -31,7 +31,7 @@ class RekeningController extends Controller
         // Membuat Rekening Cuy
  
         Rekening::create([
-            'tipe' => $request->input('bank'),
+            'tipe' => $request->input('tipe'),
             'nama' => $request->input('nama'),
             'no_rek' => $request->input('no_rek')
         ]);

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Rekening;
+use App\Pengguna;
+use App\Notane;
+use App\Kas;
 
 class UIController extends Controller
 {
@@ -28,22 +32,45 @@ class UIController extends Controller
 
     public function Rekening()
     {
+        $data_rekening = Rekening::all();
+
+        
         $meta = [
             'title' => 'Simba Rekening',
             'diskripsi' => 'Rekening - Sistem Informasi Pengelolaan Kas',
             'app_name' => 'Simba'
         ];
-        return view('/heena/rekening', [ 'meta' => $meta ]);
+        return view('/heena/rekening',[ 
+            'data_rek' => $data_rekening,
+            'meta' => $meta
+        ]);
     }
 
     public function KasMasuk()
     {
+        $now = new \DateTime('now');
+        $month = $now->format('m');
+        $year = $now->format('Y');
+
+        
+        $data_rekening = Rekening::all();
+
+        $data_kas = Kas::whereYear('tanggal','=', $year)
+                    ->whereMonth('tanggal', '=', $month)
+                    ->where('tipe','=','kas_masuk')
+                    ->join('notanes', 'kas.id_nota', '=', 'notanes.id_nota')
+                    ->get();
+
         $meta = [
             'title' => 'Simba Kas Masuk',
             'diskripsi' => 'Kas Masuk - Sistem Informasi Pengelolaan Kas',
             'app_name' => 'Simba'
         ];
-        return view('/heena/KasMasuk', [ 'meta' => $meta ]);
+        return view('/heena/KasMasuk',[ 
+            'meta' => $meta,
+            'data_kas' => $data_kas,
+            'data_rek' => $data_rekening
+        ]);
     }
 
     public function KasKeluar()
