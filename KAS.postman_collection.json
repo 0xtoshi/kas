@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "134f921b-eae9-4f95-9c6e-f4a13c4a5236",
+		"name": "KAS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buat User Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/yuhu/buat_akun?username=heena&password=unch123&role=Administrator&nama=Nariah Heena",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"yuhu",
+						"buat_akun"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "heena"
+						},
+						{
+							"key": "password",
+							"value": "unch123"
+						},
+						{
+							"key": "role",
+							"value": "Administrator"
+						},
+						{
+							"key": "nama",
+							"value": "Nariah Heena"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/pengguna/login?username=heena&password=unch123&role=Administrator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pengguna",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "heena"
+						},
+						{
+							"key": "password",
+							"value": "unch123"
+						},
+						{
+							"key": "role",
+							"value": "Administrator"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
