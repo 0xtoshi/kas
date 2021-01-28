@@ -6,8 +6,8 @@
         <meta charset="utf-8" />
         <title>{{ $meta['title'] }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="" name="author" />
+        <meta content="SIMBA SISTEM INFORMASI KAS KARANGTARUNA" name="description" />
+        <meta content="Heena" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
@@ -63,7 +63,7 @@
                                                 <div class="form-group mb-2">
                                                     <label for="userpassword">Password</label>                                            
                                                     <div class="input-group">                                  
-                                                        <input type="password" class="form-control" name="password" id="userpassword" placeholder="Masukan Passoword">
+                                                        <input type="password" class="form-control" name="password" id="userpassword" placeholder="Masukan Password">
                                                     </div>                               
                                                 </div><!--end form-group--> 
 

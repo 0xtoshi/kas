@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request; // Load Request POST GET PUT Library
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (Request $request) {
+    
+    if (!$request->session()->exists('pengguna')) {
+      return redirect('login');
+    }else{
+      return redirect('beranda');
+    }
+
+
 });
 
 
