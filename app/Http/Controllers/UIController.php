@@ -7,6 +7,7 @@ use App\Rekening;
 use App\Pengguna;
 use App\Notane;
 use App\Kas;
+use PDF;
 
 class UIController extends Controller
 {
@@ -52,7 +53,8 @@ class UIController extends Controller
 
         $total_io = ($total_kasMasuk + $total_kasKeluar);
         
-        $presentasi_kasKeluar = round($total_kasKeluar/$total_kasMasuk*100);
+
+        $presentasi_kasKeluar = ($total_kasMasuk == null) ? 0 : round($total_kasKeluar/$total_kasMasuk*100);
         $presentasi_kasMasuk = (100 - $presentasi_kasKeluar);
 
         $meta = [
@@ -118,6 +120,8 @@ class UIController extends Controller
                     ->join('rekenings','kas.id_rekening', '=', 'rekenings.id_rekening')
                     ->get();
 
+        //print_r($data_kas);
+
         $meta = [
             'title' => 'Simba Kas Masuk',
             'diskripsi' => 'Kas Masuk - Sistem Informasi Pengelolaan Kas',
@@ -173,6 +177,8 @@ class UIController extends Controller
             'diskripsi' => 'Rekapan - Sistem Informasi Pengelolaan Kas',
             'app_name' => 'Simba'
         ];
+
+
 
         if(!empty($request->input('bulan')) AND !empty($request->input('tahun'))) {
 
@@ -259,9 +265,69 @@ class UIController extends Controller
         ]);
     }
 
-    public function RekapBulan(Request $request)
+    public function RekapPDF(Request $request)
     {
         
+        $bulan = $request->input('bulan');
+        $tahun = $request->input('tahun');
+
+
+        if(!empty($request->input('bulan')) AND !empty($request->input('tahun'))) {
+
+        $data_kas = Kas::whereYear('tanggal','=', $tahun)
+                    ->whereMonth('tanggal', '=', $bulan)
+                    ->get();
+
+        $total_kredit = Kas::whereYear('tanggal','=', $tahun)
+                             ->whereMonth('tanggal', '=', $bulan)
+                             ->where('tipe','kas_masuk')->sum('nominal');
+
+        $total_debit = Kas::whereYear('tanggal','=', $tahun)
+                             ->whereMonth('tanggal', '=', $bulan)
+                             ->where('tipe','kas_keluar')->sum('nominal');
+
+            $pdf = PDF::loadview('/heena/Rekapan', [ 
+                'kas' => $data_kas,
+                'total_kredit' => $total_kredit,
+                'total_debit' => $total_debit,
+                ]);
+                return $pdf->download('rekap_kas.pdf');
+
+        }else if(!empty($request->input('tahun'))) {
+            
+            $data_kas = Kas::whereYear('tanggal','=', $tahun)
+            ->get();
+
+            $total_kredit = Kas::whereYear('tanggal','=', $tahun)
+                                ->where('tipe','kas_masuk')->sum('nominal');
+            $total_debit = Kas::whereYear('tanggal','=', $tahun)
+                                ->where('tipe','kas_keluar')->sum('nominal');
+
+            $pdf = PDF::loadview('/heena/Rekapan', [ 
+            'kas' => $data_kas,
+            'total_kredit' => $total_kredit,
+            'total_debit' => $total_debit,
+            ]);
+            return $pdf->download('rekap_kas.pdf');
+
+        }else{
+
+
+        $data_kas = Kas::OrderBy('kas.tanggal','ASC')
+                    ->get();
+        $total_kredit = Kas::where('tipe','kas_masuk')->sum('nominal');
+        $total_debit = Kas::where('tipe','kas_keluar')->sum('nominal');
+        
+
+
+        $pdf = PDF::loadview('/heena/Rekapan', [ 
+            'kas' => $data_kas,
+            'total_kredit' => $total_kredit,
+            'total_debit' => $total_debit,
+        ]);
+	    return $pdf->download('rekap_kas.pdf');
+
+        }
 
     }
 

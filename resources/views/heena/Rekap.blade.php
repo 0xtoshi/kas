@@ -219,7 +219,7 @@
                                 <div class="card-header bg-warning-50">
                                     <div class="row align-items-center">
                                         <div class="col">                      
-                                            <h4 class="card-title text-white"><i class="fas fa-th-list"></i> Rekap Kas</h4>                      
+                                            <h4 class="card-title text-white"><i class="fas fa-th-list"></i> Rekap Kas </h4>                      
                                         </div><!--end col-->                                        
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
@@ -279,7 +279,15 @@
                                             </tfoot>
                                         </table>
                                     
-                                    <button id="btnExport" class="btn btn-primary">Export PDF</button>
+                                    
+                                        @if(Request::input('bulan') and Request::input('tahun'))
+                                        <a href="/rekap/pdf?tahun={{Request::input('tahun')}}&bulan={{Request::input('bulan')}}" id="btnExport" class="btn btn-primary">Export PDF</a>
+                                        @elseif (Request::input('tahun'))
+                                        <a href="/rekap/pdf?tahun={{Request::input('tahun')}}" id="btnExport" class="btn btn-primary">Export PDF</a>
+                                        @else
+                                        <a href="/rekap/pdf" id="btnExport" class="btn btn-primary">Export PDF</a>
+                                        @endif
+
                                 </div>
                                     
                                 </div><!--end card-body--> 
@@ -289,6 +297,8 @@
                     </div><!--end row-->
                     
                 </div><!-- container -->
+
+                
 
                 <footer class="footer text-center text-sm-left">
                     Copyright &copy; {{ date('Y') }} {{ $meta['app_name'] }} 
@@ -313,28 +323,7 @@
         <script src="/plugins/dropify/js/dropify.min.js"></script>
         <script src="/assets/pages/jquery.form-upload.init.js"></script>
         <script src="/plugins/timepicker/bootstrap-material-datetimepicker.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js" integrity="sha512-AtJGnumoR/L4JbSw/HzZxkPbfr+XiXYxoEPBsP6Q+kNo9zh4gyrvg25eK2eSsp1VAEAP1XsMf2M984pK/geNXw==" crossorigin="anonymous"></script>        
-        <script>
-
-        $('document').ready( () => {
-
-            $('#mdate').bootstrapMaterialDatePicker({
-                weekStart: 0,
-                time: !1
-            });
-
-            $('#btnExport').click(() => {
-
-                var doc = new jsPDF()
-                doc.autoTable({ html: '#export' })
-                doc.save('table.pdf')
-
-            });
-
-        } );
-
-        </script>
+       
 
      
 

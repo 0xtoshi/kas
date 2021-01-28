@@ -180,7 +180,7 @@
                                                 <input type="text" name="tanggal" class="form-control" placeholder="Pilih Tanggal" id="mdate" required>
                                             </div><!-- end col --> 
                                             <div class="col-md-4">
-                                                <label class="mb-3">Masuk Ke</label>
+                                                <label class="mb-3">Diambil Dari</label>
                                             
                                                 <select name="id_rekening" class="custom-select">
                                                 @foreach ($data_rek as $key => $value)
@@ -231,6 +231,7 @@
                                                     <th class="border-top-0">Nominal</th>
                                                     <th class="border-top-0">Masuk Ke</th>
                                                     <th class="border-top-0">Diskripsi</th>
+                                                    <th class="border-top-0">Bukti Nota</th>
                                                     @if ($session['role'] == 'Administrator' or $session['role'] == 'Bendahara' or $session['role'] == 'Wakil Bendahara' )
                                                     <th class="border-top-0">Aksi</th>
                                                     @endif
@@ -240,12 +241,17 @@
                                             <tbody>
 
                                             @foreach ($data_kas as $key => $value)
-                                                <tr id="{{ $value->id_kas }}" value="{{ $value->nominal }}">                                                       
+                                                <tr id="{{ $value->id_kas }}" value="{{ $value->nominal }}" name="{{ $value->lokasi_gambar }}">                                                       
                                                     <td>{{ $key + 1 }}</td>
                                                     <td>{{ date("d M Y", strtotime($value->tanggal))  }}</td>
                                                     <td>@currency($value->nominal)</td>
                                                     <td>{{ $value->nama }}</td>
                                                     <td>{{ $value->keterangan }}</td>
+                                                    @if ($value->id_nota !== 1)
+                                                    <td><a  data-toggle="modal" id="show_img" data-target="#exampleModalLarge"><i class="fas fa-image fa-2x"></i></a></td>
+                                                    @else
+                                                    <td><a><i class="fas fa-ban fa-2x"></i></a></td>
+                                                    @endif
                                                     @if ($session['role'] == 'Administrator' or $session['role'] == 'Bendahara' or $session['role'] == 'Wakil Bendahara' )
                                                     <td>                                                       
                                                         <a href="#"  data-toggle="modal" data-target="#exampleModalPrimary" id="edit_kas" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
@@ -329,6 +335,27 @@
                                         </div><!--end modal-dialog-->
                                     </div><!--end modal-->  
 
+
+                                    <div class="modal fade bd-example-modal-lg" id="exampleModalLarge" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h6 class="modal-title m-0" id="myLargeModalLabel">Large Modal</h6>
+                                                    <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true"><i class="la la-times"></i></span>
+                                                    </button>
+                                                </div><!--end modal-header-->
+                                                <div class="modal-body">
+                                                <img id="notanes" src="/assets/images/widgets/flame-5.png" alt="" class="img-fluid">
+                                                    
+                                                </div><!--end modal-body-->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                                </div><!--end modal-footer-->
+                                            </div><!--end modal-content-->
+                                        </div><!--end modal-dialog-->
+                                    </div><!--end modal-->
+
         
 
 
@@ -358,6 +385,18 @@
             $('#modal_tanggal').bootstrapMaterialDatePicker({
                 weekStart: 0,
                 time: !1
+            });
+
+            $('a[id=show_img]').click(function(){
+
+            var anu = $(this).parents('tr').attr('id');
+            var value = $(this).parents('tr').attr('value');
+            var image = $(this).parents('tr').attr('name');
+
+            $('#notanes').attr('src', image);
+
+            console.log(image);
+
             });
 
             

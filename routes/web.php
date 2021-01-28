@@ -34,15 +34,11 @@ Route::get('/', function () {
     Route::get('/kas/masuk','UiController@KasMasuk');
     Route::get('/kas/keluar','UiController@KasKeluar');
     Route::get('/rekap','UiController@RekapKas');
-    Route::get('/rekap/kas_masuk','UiController@RekapKasMasuk');
-    Route::get('/rekap/kas_keluar','UiController@RekapKasKeluar');
-    Route::get('/rekap/semua','UiController@RekapSemuaKas');
-    Route::get('/rekap/semua','UiController@RekapSemuaKas');
-    Route::get('/rekap/rekening','UiController@RekapRekeing');
     Route::get('/user','UiController@User');
     Route::get('/user/profile','UiController@Profile');
 
     Route::get('/rekap/bulan','UiController@RekapBulan');
+    Route::get('/rekap/pdf','UiController@RekapPDF');
 
     /**
      * Router Request
