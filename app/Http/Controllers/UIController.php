@@ -205,9 +205,31 @@ class UIController extends Controller
 
     }
 
-    public function Profile()
+    public function Profile(Request $request)
     {
+        
+        $data_pengguna = Pengguna::all();
+        
+        $meta = [
+            'title' => 'Simba Kas Masuk',
+            'diskripsi' => 'Kas Masuk - Sistem Informasi Pengelolaan Kas',
+            'app_name' => 'Simba',
+            'data_pengguna' => $data_pengguna
+        ];
 
+        
+        
+        if ($request->session()->has('pengguna')) {
+            $oceng_session = session('pengguna');
+        }else{
+            $oceng_session = [];
+        }
+
+        return view('/heena/Profil', [ 
+            'meta' => $meta,
+            'session' => $oceng_session,
+            
+        ]);
     }
 
     public function RekapRekeing()

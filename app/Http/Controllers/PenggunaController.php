@@ -22,7 +22,7 @@ class PenggunaController extends Controller
     public function BuatUser(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|max:255|min:5|unique:penggunas',
+            'username' => 'required|max:255|min:4|unique:penggunas',
             'password' => 'required|max:255|min:5',
             'role' => 'required',
             'nama' => 'required|max:30|min:4'
@@ -51,7 +51,7 @@ class PenggunaController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'username' => 'required|max:255|min:5|exists:penggunas',
+            'username' => 'required|max:255|min:4|exists:penggunas',
             'password' => 'required|max:255|min:5',
             'role' => 'required',
             
@@ -122,5 +122,133 @@ class PenggunaController extends Controller
         }
         
         return $oceng_callback;
+    }
+
+
+
+    public function UbahPassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|max:255|min:5',
+        ]);
+
+
+        $oceng_session = session('pengguna');
+
+        
+        // API Validator Yeyy Ndoro 
+
+    	if ($validator->fails()) {
+           return response()->json([
+					'error' => true, 'messages' => $validator->messages() 
+				], 400);
+           exit;
+        }
+
+        Pengguna::where('id_pengguna', $oceng_session['id_pengguna'])
+        ->update([
+            'password' => Hash::make($request->input('password')),
+        ]);
+
+    }
+
+
+    public function UbahProfile(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required|max:255|min:4',
+        ]);
+
+
+        $oceng_session = session('pengguna');
+
+        
+        // API Validator Yeyy Ndoro 
+
+    	if ($validator->fails()) {
+           return response()->json([
+					'error' => true, 'messages' => $validator->messages() 
+				], 400);
+           exit;
+        }
+
+        Pengguna::where('id_pengguna', $oceng_session['id_pengguna'])
+        ->update([
+            'nama' => $request->input('nama'),
+        ]);
+
+    }
+
+
+    public function DeleteUser(Request $request) {
+
+        $validator = Validator::make($request->all(), [
+            'id_pengguna' => 'required|exists:penggunas',
+        ]);
+        
+        // API Validator Yeyy Ndoro 
+
+    	if ($validator->fails()) {
+           return response()->json([
+					'error' => true, 'messages' => $validator->messages() 
+				], 400);
+           exit;
+        }
+
+        Pengguna::where('id_pengguna', $request->input('id_pengguna'))->delete();
+
+        return ['error' => false, 'messages' => ['Sukses Menghapus Rekening! ']];
+
+    }
+
+
+    public function getDataPengguna($id) {
+
+        return Pengguna::where('id_pengguna', $id)->first();
+
+    }
+
+    public function UpdateAll(Request $request) { 
+        
+        $validator = Validator::make($request->all(), [
+            'id_pengguna' => 'required|exists:penggunas',
+            'nama' => 'required',
+            'username' => 'required',
+            'role' => 'required'
+        ]);
+        
+        // API Validator Yeyy Ndoro 
+
+    	if ($validator->fails()) {
+           return response()->json([
+					'error' => true, 'messages' => $validator->messages() 
+				], 400);
+           exit;
+        }
+
+        if(!empty($request->input('password'))) {
+
+            Pengguna::where('id_pengguna', $request->input('id_pengguna'))
+                ->update([
+                    'nama' => $request->input('nama'),
+                    'username' => $request->input('username'),
+                    'role' => $request->input('role'),
+                    'password' => Hash::make($request->input('password'))
+                ]);
+
+        }else{
+
+            Pengguna::where('id_pengguna', $request->input('id_pengguna'))
+                ->update([
+                    'nama' => $request->input('nama'),
+                    'username' => $request->input('username'),
+                    'role' => $request->input('role')
+                ]);
+
+        }
+
+        
+        
+        return ['error' => false, 'messages' => ['Sukses Update Rekening! ']];
     }
 }

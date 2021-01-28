@@ -86,7 +86,7 @@
                                 <img src="/assets/images/user.png" alt="profile-user" class="rounded-circle thumb-xs" />                                 
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#"><i data-feather="user" class="align-self-center icon-xs icon-dual mr-1"></i> Profile</a>
+                                <a class="dropdown-item" href="/user/profile"><i data-feather="user" class="align-self-center icon-xs icon-dual mr-1"></i> Profile</a>
                                
                                 <div class="dropdown-divider mb-0"></div>
                                 <a class="dropdown-item" href="#"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
@@ -134,6 +134,8 @@
                     </div><!--end row-->
                     <!-- end page title end breadcrumb -->
                     
+                    @if ($session['role'] == 'Administrator' or $session['role'] == 'Bendahara' or $session['role'] == 'Wakil Bendahara' )
+
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -206,6 +208,8 @@
                             </div> <!-- end card -->                               
                         </div> <!-- end col -->
                     </div>
+
+                    @endif
                     
                     <div class="row">
                         <div class="col-lg-12">
@@ -227,7 +231,9 @@
                                                     <th class="border-top-0">Nominal</th>
                                                     <th class="border-top-0">Masuk Ke</th>
                                                     <th class="border-top-0">Diskripsi</th>
+                                                    @if ($session['role'] == 'Administrator' or $session['role'] == 'Bendahara' or $session['role'] == 'Wakil Bendahara' )
                                                     <th class="border-top-0">Aksi</th>
+                                                    @endif
                                                     
                                                 </tr><!--end tr-->
                                             </thead>
@@ -240,10 +246,12 @@
                                                     <td>@currency($value->nominal)</td>
                                                     <td>{{ $value->nama }}</td>
                                                     <td>{{ $value->keterangan }}</td>
+                                                    @if ($session['role'] == 'Administrator' or $session['role'] == 'Bendahara' or $session['role'] == 'Wakil Bendahara' )
                                                     <td>                                                       
                                                         <a href="#"  data-toggle="modal" data-target="#exampleModalPrimary" id="edit_kas" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
                                                         <a href="#" id="delete_kas"><i class="las la-trash-alt text-danger font-18"></i></a>
                                                     </td>
+                                                    @endif
                                                 </tr><!--end tr-->     
                                             @endforeach      
                                                 

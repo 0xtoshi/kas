@@ -25,6 +25,7 @@ Route::get('/', function () {
 
  Route::post('/yuhu/buat_akun','PenggunaController@BuatUser'); // Hapus Ini Jika Sudah Live Mode
  Route::get('/login','UiController@Login');
+ Route::post('/pengguna/login','PenggunaController@LoginUser');
 
  Route::group( ['middleware' => 'heenasession'], function(){ 
 
@@ -47,7 +48,11 @@ Route::get('/', function () {
     */
 
     Route::post('/pengguna/buat_akun','PenggunaController@BuatUser'); // Hapus Ini Jika Sudah Live Mode
-    Route::post('/pengguna/login','PenggunaController@LoginUser');
+    Route::post('/pengguna/ubahpassword','PenggunaController@UbahPassword');
+    Route::post('/pengguna/ubahprofile','PenggunaController@UbahProfile');
+    Route::post('/pengguna/hapus','PenggunaController@DeleteUser');
+    Route::post('/pengguna/updateAll','PenggunaController@UpdateAll');
+    Route::get('/pengguna/show/{id}','PenggunaController@getDataPengguna');
 
     Route::post('/rekening/tambah','RekeningController@TambahRekening');
     Route::post('/rekening/delete','RekeningController@DeleteRekening');
