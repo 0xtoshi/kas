@@ -146,9 +146,12 @@
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
                                 <div class="card-body">
-                                    
-                                        <table id="export" class="table mb-0 table-bordered">
-                                            
+                                        <p> Silahkan Pilih Rekapan !</p>
+                                        <a href="/rekap/tahun" class="btn btn-primary"><i class="far fa-calendar"></i> Rekap Per Tahun </a>
+                                        <a href="/rekap/bulan" class="btn btn-primary"><i class="fas fa-calendar-alt"></i> Rekap Per Bulanan </a>
+                                
+                                        <table id="export" class="table mb-0 table-bordered table-hover”">
+                                        
                                             <thead>
                                                 <tr class="bg-black text-white">
                                                                                                                

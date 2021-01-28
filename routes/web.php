@@ -42,7 +42,7 @@ Route::get('/', function () {
     Route::get('/user','UiController@User');
     Route::get('/user/profile','UiController@Profile');
 
-    
+    Route::get('/rekap/bulan','UiController@RekapBulan');
 
     /**
      * Router Request

@@ -185,25 +185,6 @@ class UIController extends Controller
         ]);
     }
 
-    public function RekapKasMasuk()
-    {
-
-    }
-
-    public function RekapKasKeluar()
-    {
-
-    }
-
-    public function RekapSemuaKas()
-    {
-
-    }
-
-    public function User()
-    {
-
-    }
 
     public function Profile(Request $request)
     {
@@ -232,8 +213,34 @@ class UIController extends Controller
         ]);
     }
 
-    public function RekapRekeing()
+    public function RekapBulan(Request $request)
     {
+        $bulan = $request->input('bulan');
+        $tahun = $request->input('tahun');
+
+        $data_kas = Kas::whereYear('tanggal','=', $tahun)
+                    ->whereMonth('tanggal', '=', $bulan)
+                    ->get();
+
+        $total_kredit = Kas::whereYear('tanggal','=', $tahun)
+                             ->whereMonth('tanggal', '=', $bulan)
+                             ->where('tipe','kas_masuk')->sum('nominal');
+
+        $total_debit = Kas::whereYear('tanggal','=', $tahun)
+                             ->whereMonth('tanggal', '=', $bulan)
+                             ->where('tipe','kas_keluar')->sum('nominal');
+
+        $saldo_tersedia = ($total_kredit - $total_debit);
+
+        return view('/heena/Rekapan', [ 
+            'kas' => $data_kas,
+            'total_kredit' => $total_kredit,
+            'total_debit' => $total_debit,
+            'saldo_tersedia ' => $saldo_tersedia,
+            'bulan' => $bulan,
+            'tahun' => $tahun
+        ]);
 
     }
+
 }
