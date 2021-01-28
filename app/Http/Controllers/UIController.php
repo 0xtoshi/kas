@@ -207,7 +207,7 @@ class UIController extends Controller
 
     public function Profile(Request $request)
     {
-        
+
         $data_pengguna = Pengguna::all();
         
         $meta = [
