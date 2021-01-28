@@ -76,95 +76,10 @@
                     <ul class="list-unstyled topbar-nav float-right mb-0">  
                                           
 
-                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="false" aria-expanded="false">
-                                <i data-feather="bell" class="align-self-center topbar-icon"></i>
-                                <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-lg pt-0">
-                            
-                                <h6 class="dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center">
-                                    Notifications <span class="badge badge-primary badge-pill">2</span>
-                                </h6> 
-                                <div class="notification-menu" data-simplebar>
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">2 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <i data-feather="shopping-cart" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing and industry.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">10 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <img src="/assets/images/users/user-4.jpg" alt="" class="thumb-sm rounded-circle">
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Meeting with designers</h6>
-                                                <small class="text-muted mb-0">It is a long established fact that a reader.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">40 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">                                                    
-                                                <i data-feather="users" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">UX 3 Task complete.</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">1 hr ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <img src="/assets/images/users/user-5.jpg" alt="" class="thumb-sm rounded-circle">
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
-                                                <small class="text-muted mb-0">It is a long established fact that a reader.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">2 hrs ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <i data-feather="check-circle" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Payment Successfull</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                </div>
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
-                                    View all <i class="fi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </li>
-
                         <li class="dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <span class="ml-1 nav-user-name hidden-sm">Heena</span>
+                                <span class="ml-1 nav-user-name hidden-sm">{{ $session['nama'] }}</span>
                                 <img src="/assets/images/user.png" alt="profile-user" class="rounded-circle thumb-xs" />                                 
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
@@ -270,7 +185,8 @@
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th class="border-top-0">#</th>                                                            
-                                                    <th class="border-top-0">Bank</th>
+                                                    <th class="border-top-0">Tipe</th>
+                                                    <th class="border-top-0">Nama</th>
                                                     <th class="border-top-0">No Rekening</th>
                                                     <th class="border-top-0">Aksi</th>
                                                     
@@ -282,11 +198,12 @@
 
                                                 <tr id="{{ $value->id_rekening }}" value="{{ $value->nama }}">                                                     
                                                 <td>{{ $key + 1 }}</td>
+                                                <td>{{ $value->tipe }}</td>
                                                 <td>{{ $value->nama }}</td>
                                                 <td>{{ $value->no_rek }}</td>
                                                     <td>                                                       
-                                                        <a href="#" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
-                                                        <a href="#"><i class="las la-trash-alt text-danger font-18"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#exampleModalPrimary" id="edit_bank" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
+                                                        <a href="#" id="delete_bank" ><i class="las la-trash-alt text-danger font-18"></i></a>
                                                     </td>
                                                 </tr><!--end tr-->     
                                                 
@@ -305,7 +222,7 @@
                 </div><!-- container -->
 
                 <footer class="footer text-center text-sm-left">
-                    &copy; 2020 Dastone <span class="d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
+                    Copyright &copy; {{ date('Y') }} {{ $meta['app_name'] }} 
                 </footer><!--end footer-->
             </div>
             <!-- end page content -->
@@ -313,6 +230,50 @@
         <!-- end page-wrapper -->
 
         
+                                    <div class="modal fade" id="exampleModalPrimary" tabindex="-1" role="dialog" aria-labelledby="exampleModalPrimary1" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-primary">
+                                                    <h6 class="modal-title m-0 text-white" id="exampleModalPrimary1">Update Rekening</h6>
+                                                    <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true"><i class="la la-times text-white"></i></span>
+                                                    </button>
+                                                </div><!--end modal-header-->
+                                                <div class="modal-body">
+                                                <form action="" id="modal_edit">
+                                                    <div class="row">
+                                                
+                                                        <div class="col-md-4">
+                                                            <label class="mb-3">Tipe Rekening</label>
+                                                            <select name="tipe" id="modal_tipe" class="custom-select">
+                                                                <option value="Cash" selected="">Cash</option>
+                                                                <option value="Bank">Bank</option>
+                                                            </select>
+                                                        </div><!-- end col -->   
+                                                        <div class="col-md-4">
+                                                            <label class="mb-3">Nama</label>
+                                                            <input type="text" name="nama" id="modal_nama" class="form-control" required="">
+                                                        </div><!-- end col -->      
+                                                        <input type="hidden" name="id_rekening" id="id_rekening">
+                                                        <div class="col-md-4">
+                                                            <label class="mb-3">No Rekening</label>
+                                                            <input type="number" name="no_rek" id="modal_no_rek" class="form-control" required="">
+                                                        </div><!-- end col -->  
+                                                        <div class="col-md-3">
+                                                            <br>
+                                                            <button type="submit" class="btn btn-primary">Update</button>
+                                                        </div><!-- end col -->
+
+                                                                                                        
+                                                 </div></form>                                               
+                                                </div><!--end modal-body-->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                                    
+                                                </div><!--end modal-footer-->
+                                            </div><!--end modal-content-->
+                                        </div><!--end modal-dialog-->
+                                    </div><!--end modal-->  
 
 
         <!-- jQuery  -->
@@ -365,6 +326,100 @@
                 }
                 })
             
+            });
+
+
+
+
+
+            $('a[id=edit_bank]').click(function(){
+                var anu = $(this).parents('tr').attr('id');
+                var value = $(this).parents('tr').attr('value');
+                $.ajax({
+                    url : '/rekening/show/'+anu,
+                    type : 'GET',
+                    success : (data) => {
+                               
+                                
+                                $('#id_rekening').val(data.id_rekening);
+                                $('#modal_nama').val(data.nama);
+                                $('#modal_no_rek').val(data.no_rek);
+                                $('#modal_tipe').val(data.tipe);
+                                
+                                
+                    },
+                    error : (error) => {
+                    console.log(error);
+                    }
+                })
+                
+            });
+
+
+            $('form[id=modal_edit]').submit( (e) => {
+                e.preventDefault();
+                var data =  $('form[id=modal_edit]').serialize();
+                $.ajax({
+                    url: '/rekening/update',
+                    type: 'POST',
+                    data: data,
+                    success : (data) => {
+                        //console.log(data);
+                        swal({
+                            title: "Suksess 😽!",
+                            text: "Sukses update Rekening!",
+                            type: "success",
+                            icon: "success",
+                        }).then(function() {
+                            window.location = "/rekening";
+                        });
+                    },
+                    error : (data) => {
+                        swal({
+                            title: "Error 😿!",
+                            text: "Pastikan form telah diisi dengan benar!",
+                            type: "error",
+                            icon: "error",
+                        });
+                    }
+                    })
+            })
+
+
+            $('a[id=delete_bank]').click(function(){
+                var anu = $(this).parents('tr').attr('id');
+                var value = $(this).parents('tr').attr('value');
+                swal({
+                    title: "Hapus ("+value+") 😿?",
+                    text: "Apakah anda yakin ingin menghapus?",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                    $.ajax({
+                        url : '/rekening/delete',
+                        type : 'POST',
+                        data : { id_rekening : anu},
+                        success : (data) => {
+                        swal("Sukses Menghapus "+ value +" 😽 !", {
+                            icon: "success",
+                        }).then(function() {
+                            window.location = "/rekening";
+                        });
+                        },
+                        error : (err) => {
+                        swal("Gagal Menghapus "+ value +" 😿 !", {
+                            icon: "error",
+                        });
+                        }
+                    })
+                    
+                    } else {
+                    swal("Rekeing Bank Batal Dihapus 😽!");
+                    }
+                });
             });
 
         });

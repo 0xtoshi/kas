@@ -78,91 +78,6 @@
                     <ul class="list-unstyled topbar-nav float-right mb-0">  
                                           
 
-                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="false" aria-expanded="false">
-                                <i data-feather="bell" class="align-self-center topbar-icon"></i>
-                                <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-lg pt-0">
-                            
-                                <h6 class="dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center">
-                                    Notifications <span class="badge badge-primary badge-pill">2</span>
-                                </h6> 
-                                <div class="notification-menu" data-simplebar>
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">2 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <i data-feather="shopping-cart" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing and industry.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">10 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <img src="/assets/images/users/user-4.jpg" alt="" class="thumb-sm rounded-circle">
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Meeting with designers</h6>
-                                                <small class="text-muted mb-0">It is a long established fact that a reader.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">40 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">                                                    
-                                                <i data-feather="users" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">UX 3 Task complete.</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">1 hr ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <img src="/assets/images/users/user-5.jpg" alt="" class="thumb-sm rounded-circle">
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
-                                                <small class="text-muted mb-0">It is a long established fact that a reader.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">2 hrs ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <i data-feather="check-circle" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Payment Successfull</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                </div>
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
-                                    View all <i class="fi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </li>
-
                         <li class="dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
@@ -186,7 +101,7 @@
                         </li> 
                         <li class="creat-btn">
                             <div class="nav-link">
-                                <a class=" btn btn-sm btn-danger" href="#" role="button"><i class="far fa-credit-card mr-2"></i>Rekening</a>
+                                <a class=" btn btn-sm btn-danger" href="#" role="button"><i class="fas fa-database mr-2"></i>Rekap Kas</a>
                             </div>                                
                         </li>                           
                     </ul>
@@ -218,16 +133,7 @@
                     </div><!--end row-->
                     <!-- end page title end breadcrumb -->
                     
-                                <div class="card bg-primary text-white text-center p-3">
-                                    <blockquote class="blockquote mb-0">
-                                        <p>Tujuanku Menabung adalah untuk foya-foya</p>
-                                        <footer class="blockquote-footer text-white">
-                                        <small>
-                                            <cite title="Source Title">Heena</cite>
-                                        </small>
-                                        </footer>
-                                    </blockquote>
-                                </div>
+                                
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -241,59 +147,61 @@
                                 </div><!--end card-header-->
                                 <div class="card-body">
                                     
-                                <div class="row">
-                                <div class="col-md-3">
-                                    <div class="card">
-                                        <div class="card-header bg-warning-50">
-                                            <h4 class="card-title text-white">Rekap Semua Kas</h4>
-                                        </div><!--end card-header-->
-                                        <div class="card-body">
-                                            <p class="card-text text-muted ">Rekap Semua Kas.</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Klik Disini</a>
-                                        </div><!--end card-body-->                               
-                                    </div><!--end card-->
-                                    
-                                </div>
+                                        <table id="export" class="table mb-0 table-bordered">
+                                            
+                                            <thead>
+                                                <tr class="bg-black text-white">
+                                                                                                               
+                                                    <th class="border-top-0 text-white">Tanggal</th>
+                                                    <th class="border-top-0 text-white">Diskripsi</th>
+                                                    <th class="border-top-0 text-white">Kredit</th>
+                                                    <th class="border-top-0 text-white">Debit</th>
+                                                    
+                                                    
+                                                </tr><!--end tr-->
+                                            </thead>
+                                            <tbody>
+                                            
+                                            @foreach ($kas as $value)
+                                                <tr>                                                       
+                                                    
+                                                    <td>{{ date("d M Y", strtotime($value->tanggal))  }}</td>
+                                                    <td>{{ $value->keterangan }}</td>
+                                                    
+                                                    @if( $value->tipe == 'kas_masuk' )
+                                                    <td>@currency($value->nominal)</td>
+                                                    @else
+                                                    <td></td>
+                                                    @endif
 
-                                <div class="col-md-3">
-                                    <div class="card">
-                                        <div class="card-header bg-primary-50">
-                                            <h4 class="card-title text-white">Rekap Kas Rekening</h4>
-                                        </div><!--end card-header-->
-                                        <div class="card-body">
-                                            <p class="card-text text-muted ">Rekap Semua Kas.</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Klik Disini</a>
-                                        </div><!--end card-body-->                               
-                                    </div><!--end card-->
-                                    
-                                </div>
+                                                    @if( $value->tipe == 'kas_keluar' )
+                                                    <td>@currency($value->nominal)</td>
+                                                    @else
+                                                    <td></td>
+                                                    @endif
+                                                </tr><!--end tr-->     
+                                                  
+                                            @endforeach
+                                                
+                                                                     
+                                            </tbody>
+                                            
+                                            <tfoot>
+                                                        <tr class="bg-primary text-white">
+                                                            <th colspan="2" class="border-0 text-white">Total </th>                                                        
+                                                            <td class="border-0"><b>@currency($total_kredit)</b></td>
+                                                            <td class="border-0"><b>@currency($total_debit)</b></td>
+                                                        </tr>
 
-                                <div class="col-md-3">
-                                    <div class="card">
-                                        <div class="card-header bg-success-50">
-                                            <h4 class="card-title text-white">Rekap Kas Cash</h4>
-                                        </div><!--end card-header-->
-                                        <div class="card-body">
-                                            <p class="card-text text-muted ">Rekap Semua Kas.</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Klik Disini</a>
-                                        </div><!--end card-body-->                               
-                                    </div><!--end card-->
+                                                        <tr class="bg-success text-white">                                   
+                                                            <td class="border-0 font-14"><b>Saldo Tersisa</b></td>
+                                                            <td class="border-0 font-14"><b>@currency($saldo_tersedia)</b></td>
+                                                            <th colspan="2" class="border-0"></th>   
+                                                        </tr>
+                                            </tfoot>
+                                        </table>
                                     
-                                </div>
-
-                                <div class="col-md-3">
-                                    <div class="card">
-                                        <div class="card-header bg-pink-50">
-                                            <h4 class="card-title text-white">Rekap Kas Cash</h4>
-                                        </div><!--end card-header-->
-                                        <div class="card-body">
-                                            <p class="card-text text-muted ">Rekap Semua Kas.</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Klik Disini</a>
-                                        </div><!--end card-body-->                               
-                                    </div><!--end card-->
-                                    
-                                </div>
-
+                                    <button id="btnExport" class="btn btn-primary">Export PDF</button>
                                 </div>
                                     
                                 </div><!--end card-body--> 
@@ -305,7 +213,7 @@
                 </div><!-- container -->
 
                 <footer class="footer text-center text-sm-left">
-                    &copy; 2020 Dastone <span class="d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
+                    Copyright &copy; {{ date('Y') }} {{ $meta['app_name'] }} 
                 </footer><!--end footer-->
             </div>
             <!-- end page content -->
@@ -327,7 +235,8 @@
         <script src="/plugins/dropify/js/dropify.min.js"></script>
         <script src="/assets/pages/jquery.form-upload.init.js"></script>
         <script src="/plugins/timepicker/bootstrap-material-datetimepicker.js"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js" integrity="sha512-AtJGnumoR/L4JbSw/HzZxkPbfr+XiXYxoEPBsP6Q+kNo9zh4gyrvg25eK2eSsp1VAEAP1XsMf2M984pK/geNXw==" crossorigin="anonymous"></script>        
         <script>
 
         $('document').ready( () => {
@@ -335,6 +244,14 @@
             $('#mdate').bootstrapMaterialDatePicker({
                 weekStart: 0,
                 time: !1
+            });
+
+            $('#btnExport').click(() => {
+
+                var doc = new jsPDF()
+                doc.autoTable({ html: '#export' })
+                doc.save('table.pdf')
+
             });
 
         } );

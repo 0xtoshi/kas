@@ -78,95 +78,11 @@
                     <ul class="list-unstyled topbar-nav float-right mb-0">  
                                           
 
-                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="false" aria-expanded="false">
-                                <i data-feather="bell" class="align-self-center topbar-icon"></i>
-                                <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-lg pt-0">
-                            
-                                <h6 class="dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center">
-                                    Notifications <span class="badge badge-primary badge-pill">2</span>
-                                </h6> 
-                                <div class="notification-menu" data-simplebar>
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">2 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <i data-feather="shopping-cart" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing and industry.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">10 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <img src="/assets/images/users/user-4.jpg" alt="" class="thumb-sm rounded-circle">
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Meeting with designers</h6>
-                                                <small class="text-muted mb-0">It is a long established fact that a reader.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">40 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">                                                    
-                                                <i data-feather="users" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">UX 3 Task complete.</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">1 hr ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <img src="/assets/images/users/user-5.jpg" alt="" class="thumb-sm rounded-circle">
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
-                                                <small class="text-muted mb-0">It is a long established fact that a reader.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">2 hrs ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <i data-feather="check-circle" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Payment Successfull</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                </div>
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
-                                    View all <i class="fi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </li>
 
                         <li class="dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <span class="ml-1 nav-user-name hidden-sm">Heena</span>
+                                <span class="ml-1 nav-user-name hidden-sm">{{ $session['nama'] }}</span>
                                 <img src="/assets/images/user.png" alt="profile-user" class="rounded-circle thumb-xs" />                                 
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
@@ -186,7 +102,7 @@
                         </li> 
                         <li class="creat-btn">
                             <div class="nav-link">
-                                <a class=" btn btn-sm btn-danger" href="#" role="button"><i class="far fa-credit-card mr-2"></i>Rekening</a>
+                                <a class=" btn btn-sm btn-danger" href="#" role="button"><i class="fas fa-dollar-sign mr-2"></i>Kas Keluar</a>
                             </div>                                
                         </li>                           
                     </ul>
@@ -217,17 +133,7 @@
                         </div><!--end col-->
                     </div><!--end row-->
                     <!-- end page title end breadcrumb -->
-                    <div class="card bg-pink-50 text-white text-center p-3">
-                                    <blockquote class="blockquote mb-0">
-                                        <p class="text-white">Tujuanku Menabung adalah biar bisa foya-foya</p>
-                                        <footer class="blockquote-footer text-white">
-                                        <small>
-                                            <cite title="Source Title">Heena</cite>
-                                        </small>
-                                        </footer>
-                                    </blockquote>
-                                </div>
-
+                    
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -236,45 +142,65 @@
                                     <p class="text-white mb-0">Form Tambah Kas Keluar</p>
                                 </div><!--end card-header-->
                                 <br/>
-                                <div class="col-md-12">
-                                            <div class="card">
-                                                <div class="card-header bg-primary-50">
-                                                    <h4 class="card-title text-white">Upload Nota</h4>
-                                                    <p class="text-white mb-0">Upload Bukti Nota Jika Tersedia</p>
-                                                </div><!--end card-header-->
-                                                <div class="card-body">
-                                                    <input type="file" id="input-file-now" class="dropify" />                                                   
-                                                </div><!--end card-body-->
-                                            </div><!--end card-->
-                                        </div><!--end col-->
+                                
                                 <div class="card-body bootstrap-select-1">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Nominal</label>
-                                            <input type="text" name="nominal" class="form-control">
-                                        </div><!-- end col -->      
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Tanggal</label>
-                                            <input type="text" name="tanggal" class="form-control" placeholder="Pilih Tanggal" id="mdate">
-                                        </div><!-- end col --> 
-                                        <div class="col-md-4">
-                                            <label class="mb-3">Masuk Ke</label>
-                                            <select name="rek" class="custom-select">
-                                                <option value="1">Cash</option>
-                                                <option value="2">Rek Mandiri</option>
-                                                <option value="3">Rek BCA</option>
-                                            </select>
-                                        </div><!-- end col --> 
-                                        <div class="col-md-12">
-                                            <label class="mb-3">Keterangan</label>
-                                            <textarea name="keterangan" class="form-control"></textarea>
-                                        </div>
-
+                                <div id="notif_upload">
+                                    <div class="alert alert-outline-primary" role="alert"> Silahkan tambahkan bukti nota jika tersedia! </div>
+                                </div>
+                                <div class="row">
+                                
+                                    <div class="col-md-10">
+                                    
+                                        <div class="custom-file">
+                                        <form method="POST" enctype="multipart/form-data" id="upload_nota">
+                                            <input type="file" name="file" class="custom-file-input" id="file">
+                                            <label class="custom-file-label" for="customFile">Pilih File!</label>
                                         
-                                        <div class="col-md-3">
-                                            <br/>
-                                            <button class="btn btn-primary">Tambah</button>
-                                        </div><!-- end col -->                                                                
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <button class="btn btn-primary" id='btnUpload'>Upload!</button>
+                                    </div>
+
+                                    </form>
+
+                                </div><!--end col-->
+                                <br/><br/>
+                                    <form id="tambah_kas" action="#">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="mb-3">Nominal</label>
+                                                <input type="text" name="nominal" class="form-control" required>
+                                            </div><!-- end col -->      
+                                            <div class="col-md-4">
+                                                <label class="mb-3">Tanggal</label>
+                                                <input type="text" name="tanggal" class="form-control" placeholder="Pilih Tanggal" id="mdate" required>
+                                            </div><!-- end col --> 
+                                            <div class="col-md-4">
+                                                <label class="mb-3">Masuk Ke</label>
+                                            
+                                                <select name="id_rekening" class="custom-select">
+                                                @foreach ($data_rek as $key => $value)
+                                                    <option value="{{ $value->id_rekening }}">{{$value->nama}}</option>
+                                                @endforeach
+                                                </select>
+                                                
+                                            </div><!-- end col --> 
+                                            <input type="hidden" name="id_nota" id="id_nota">
+                                            <input type="hidden" name="tipe" value="kas_keluar">
+                                            <input type="hidden" name="id_pengguna" value="{{ $session['id_pengguna'] }}">
+                                            <div class="col-md-12">
+                                                <label class="mb-3">Keterangan</label>
+                                                <textarea name="keterangan" class="form-control" required></textarea>
+                                            </div>
+
+                                            
+                                            <div class="col-md-3">
+                                                <br/>
+                                                <button type="submit" class="btn btn-primary">Tambah</button>
+                                            </div><!-- end col --> 
+                                    </form>                                                               
                                     </div><!-- end row --> 
                                 </div><!-- end card-body --> 
                             </div> <!-- end card -->                               
@@ -306,28 +232,20 @@
                                                 </tr><!--end tr-->
                                             </thead>
                                             <tbody>
-                                                <tr>                                                        
-                                                    <td>1</td>                                                            
-                                                    <td>1 Jan 2021</td>
-                                                    <td>Rp.300.000</td>
-                                                    <td>Cash</td>
-                                                    <td>Pemasukan Kas Dari Anggota</td>
+
+                                            @foreach ($data_kas as $key => $value)
+                                                <tr id="{{ $value->id_kas }}" value="{{ $value->nominal }}">                                                       
+                                                    <td>{{ $key + 1 }}</td>
+                                                    <td>{{ date("d M Y", strtotime($value->tanggal))  }}</td>
+                                                    <td>@currency($value->nominal)</td>
+                                                    <td>{{ $value->nama }}</td>
+                                                    <td>{{ $value->keterangan }}</td>
                                                     <td>                                                       
-                                                        <a href="#" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
-                                                        <a href="#"><i class="las la-trash-alt text-danger font-18"></i></a>
+                                                        <a href="#"  data-toggle="modal" data-target="#exampleModalPrimary" id="edit_kas" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
+                                                        <a href="#" id="delete_kas"><i class="las la-trash-alt text-danger font-18"></i></a>
                                                     </td>
                                                 </tr><!--end tr-->     
-                                                <tr>                                                        
-                                                    <td>1</td>                                                            
-                                                    <td>2 Jan 2021</td>
-                                                    <td>Rp.420.000</td>
-                                                    <td>Bank Mandiri</td>
-                                                    <td>Pemasukan Kas Dari Hasil Event Turnamen</td>
-                                                    <td>                                                       
-                                                        <a href="#" class="mr-2"><i class="las la-pen text-info font-18"></i></a>
-                                                        <a href="#"><i class="las la-trash-alt text-danger font-18"></i></a>
-                                                    </td>
-                                                </tr><!--end tr-->    
+                                            @endforeach      
                                                 
                                                 
                                                                      
@@ -343,12 +261,65 @@
                 </div><!-- container -->
 
                 <footer class="footer text-center text-sm-left">
-                    &copy; 2020 Dastone <span class="d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
+                    Copyright &copy; {{ date('Y') }} {{ $meta['app_name'] }} 
                 </footer><!--end footer-->
             </div>
             <!-- end page content -->
         </div>
         <!-- end page-wrapper -->
+
+                                    <div class="modal fade" id="exampleModalPrimary" tabindex="-1" role="dialog" aria-labelledby="exampleModalPrimary1" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-primary">
+                                                    <h6 class="modal-title m-0 text-white" id="exampleModalPrimary1">Update Kas Keluar</h6>
+                                                    <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true"><i class="la la-times text-white"></i></span>
+                                                    </button>
+                                                </div><!--end modal-header-->
+                                                <div class="modal-body">
+                                                <form id="modal_edit" action="#">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <label class="mb-3">Nominal</label>
+                                                            <input type="text" name="nominal" id="modal_nominal" class="form-control" required="">
+                                                        </div><!-- end col -->      
+                                                        <div class="col-md-4">
+                                                            <label class="mb-3">Tanggal</label>
+                                                            <input type="text" name="tanggal" class="form-control" placeholder="Pilih Tanggal" id="modal_tanggal" required="" data-dtp="dtp_RQD02">
+                                                        </div><!-- end col --> 
+                                                        <div class="col-md-4">
+                                                            <label class="mb-3">Masuk Ke</label>
+                                                        
+                                                            <select name="id_rekening" id="modal_id_rekening" class="custom-select">
+                                                                @foreach ($data_rek as $key => $value)
+                                                                    <option value="{{ $value->id_rekening }}">{{$value->nama}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                            
+                                                        </div><!-- end col --> 
+                                                        <div class="col-md-12">
+                                                            <label class="mb-3">Keterangan</label>
+                                                            <textarea name="keterangan" id="modal_keterangan" class="form-control" required=""></textarea>
+                                                        </div>
+
+                                                        <input type="hidden" name="id_kas" id="modal_id_kas">
+                                                        
+                                                        <div class="col-md-3">
+                                                            <br>
+                                                            <button type="submit" class="btn btn-primary">Update</button>
+                                                        </div><!-- end col --> 
+                                                                                                            
+                                                    </div>
+                                                </form>                                             
+                                                </div><!--end modal-body-->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                                    
+                                                </div><!--end modal-footer-->
+                                            </div><!--end modal-content-->
+                                        </div><!--end modal-dialog-->
+                                    </div><!--end modal-->  
 
         
 
@@ -363,7 +334,8 @@
         <script src="/assets/js/moment.js"></script>
         <script src="/plugins/daterangepicker/daterangepicker.js"></script>
         <script src="/plugins/dropify/js/dropify.min.js"></script>
-        <script src="/assets/pages/jquery.form-upload.init.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+        
         <script src="/plugins/timepicker/bootstrap-material-datetimepicker.js"></script>
         
         <script>
@@ -374,6 +346,179 @@
                 weekStart: 0,
                 time: !1
             });
+
+            $('#modal_tanggal').bootstrapMaterialDatePicker({
+                weekStart: 0,
+                time: !1
+            });
+
+            
+            $("#btnUpload").click(function (event) {
+                event.preventDefault();
+                var form = $('#upload_nota')[0];
+                var data = new FormData(form);
+
+                        $("#btnUpload").prop("disabled", true);
+
+                            $.ajax({
+                                type: "POST",
+                                enctype: 'multipart/form-data',
+                                url: "/nota/upload",
+                                data: data,
+                                processData: false,
+                                contentType: false,
+                                cache: false,
+                                timeout: 600000,
+                                success: function (data) {
+
+                                    $("#notif_upload").html(`<div class="alert alert-success border-0" role="alert">
+                                        <strong>Yuhuu!</strong> Sukses Upload Bukti Nota!.
+                                    </div>`);
+                                    $('#id_nota').val(data);
+                                    $("#btnSubmit").prop("disabled", false);
+
+                                },
+                                error: function (e) {
+
+                                    $("#notif_upload").html(`<div class="alert alert-danger border-0" role="alert">
+                                        <strong>Yuhuu!</strong> Gagal Upload Bukti Nota!.
+                                    </div>`);
+                                    $("#btnSubmit").prop("disabled", false);
+
+                                }
+                            });
+
+            });
+
+
+            $('form[id=tambah_kas]').submit( (e) => {
+          
+                e.preventDefault();
+                
+                var kas_data =  $('form[id=tambah_kas]').serialize();
+                console.log(kas_data)
+                $.ajax({
+                    url: '/kas/tambah',
+                    type: 'POST',
+                    data: kas_data,
+                    success : (data) => {
+                        //console.log(data);
+                        swal({
+                            title: "Suksess 😽!",
+                            text: "Sukses menambahkan Kas Keluar!",
+                            type: "success",
+                            icon: "success",
+                        }).then(function() {
+                            window.location = "/kas/keluar";
+                        });
+                    },
+                    error : (data) => {
+                        swal({
+                            title: "Error 😿!",
+                            text: "Pastikan form telah diisi dengan benar!",
+                            type: "error",
+                            icon: "error",
+                        });
+                    }
+                    })
+                
+                });
+
+
+
+                $('a[id=delete_kas]').click(function(){
+                var anu = $(this).parents('tr').attr('id');
+                var value = $(this).parents('tr').attr('value');
+                swal({
+                    title: "Hapus ("+value+") 😿?",
+                    text: "Apakah anda yakin ingin menghapus?",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                    $.ajax({
+                        url : '/kas/delete',
+                        type : 'POST',
+                        data : { id_kas : anu},
+                        success : (data) => {
+                        swal("Sukses Menghapus "+ value +" 😽 !", {
+                            icon: "success",
+                        }).then(function() {
+                            window.location = "/kas/keluar";
+                        });
+                        },
+                        error : (err) => {
+                        swal("Gagal Menghapus "+ value +" 😿 !", {
+                            icon: "error",
+                        });
+                        }
+                    })
+                    
+                    } else {
+                    swal("Kas Batal Dihapus 😽!");
+                    }
+                });
+            });
+
+
+            $('a[id=edit_kas]').click(function(){
+                var anu = $(this).parents('tr').attr('id');
+                var value = $(this).parents('tr').attr('value');
+                $.ajax({
+                    url : '/kas/show/'+anu,
+                    type : 'GET',
+                    success : (data) => {
+                               
+                                
+                                $('#modal_nominal').val(data.nominal);
+                                $('#modal_tipe').val(data.tipe);
+                                $('#modal_keterangan').val(data.keterangan);
+                                $('#modal_tanggal').val(data.tanggal);
+                                $('#modal_id_kas').val(data.id_kas);
+                               
+                                
+                                
+                    },
+                    error : (error) => {
+                    console.log(error);
+                    }
+                })
+                
+            });
+
+
+
+            $('form[id=modal_edit]').submit( (e) => {
+                e.preventDefault();
+                var data =  $('form[id=modal_edit]').serialize();
+                $.ajax({
+                    url: '/kas/update',
+                    type: 'POST',
+                    data: data,
+                    success : (data) => {
+                        //console.log(data);
+                        swal({
+                            title: "Suksess 😽!",
+                            text: "Sukses update Kas Keluar!",
+                            type: "success",
+                            icon: "success",
+                        }).then(function() {
+                            window.location = "/kas/keluar";
+                        });
+                    },
+                    error : (data) => {
+                        swal({
+                            title: "Error 😿!",
+                            text: "Pastikan form telah diisi dengan benar!",
+                            type: "error",
+                            icon: "error",
+                        });
+                    }
+                    })
+            })
+            
 
         } );
 

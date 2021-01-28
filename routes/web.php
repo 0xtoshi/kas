@@ -23,27 +23,43 @@ Route::get('/', function () {
  * Router For User Interface Heena Unchhhh
  */
 
+ Route::post('/yuhu/buat_akun','PenggunaController@BuatUser'); // Hapus Ini Jika Sudah Live Mode
  Route::get('/login','UiController@Login');
- Route::get('/beranda','UiController@Beranda');
- Route::get('/rekening','UiController@Rekening');
- Route::get('/kas/masuk','UiController@KasMasuk');
- Route::get('/kas/keluar','UiController@KasKeluar');
- Route::get('/rekap','UiController@RekapKas');
- Route::get('/rekap/kas_masuk','UiController@RekapKasMasuk');
- Route::get('/rekap/kas_keluar','UiController@RekapKasKeluar');
- Route::get('/rekap/semua','UiController@RekapSemuaKas');
- Route::get('/rekap/semua','UiController@RekapSemuaKas');
- Route::get('/rekap/rekening','UiController@RekapRekeing');
- Route::get('/user','UiController@User');
- Route::get('/user/profile','UiController@Profile');
- 
 
- /**
-  * Router Request
-  */
+ Route::group( ['middleware' => 'heenasession'], function(){ 
 
-  Route::post('/pengguna/buat_akun','PenggunaController@BuatUser'); // Hapus Ini Jika Sudah Live Mode
-  Route::post('/pengguna/login','PenggunaController@LoginUser');
-  Route::post('/rekening/tambah','RekeningController@TambahRekening');
-  Route::post('/kas/tambah','KasController@TambahKas');
+    Route::get('/beranda','UiController@Beranda');
+    Route::get('/rekening','UiController@Rekening');
+    Route::get('/kas/masuk','UiController@KasMasuk');
+    Route::get('/kas/keluar','UiController@KasKeluar');
+    Route::get('/rekap','UiController@RekapKas');
+    Route::get('/rekap/kas_masuk','UiController@RekapKasMasuk');
+    Route::get('/rekap/kas_keluar','UiController@RekapKasKeluar');
+    Route::get('/rekap/semua','UiController@RekapSemuaKas');
+    Route::get('/rekap/semua','UiController@RekapSemuaKas');
+    Route::get('/rekap/rekening','UiController@RekapRekeing');
+    Route::get('/user','UiController@User');
+    Route::get('/user/profile','UiController@Profile');
+    
 
+    /**
+     * Router Request
+    */
+
+    Route::post('/pengguna/buat_akun','PenggunaController@BuatUser'); // Hapus Ini Jika Sudah Live Mode
+    Route::post('/pengguna/login','PenggunaController@LoginUser');
+
+    Route::post('/rekening/tambah','RekeningController@TambahRekening');
+    Route::post('/rekening/delete','RekeningController@DeleteRekening');
+    Route::post('/rekening/update','RekeningController@UpdateRekening');
+    Route::get('/rekening/show/{id}','RekeningController@getDataRekening');
+    
+    Route::post('/kas/tambah','KasController@TambahKas');
+    Route::post('/kas/delete','KasController@DeleteKas');
+    Route::post('/kas/update','KasController@UpdateKas');
+    Route::get('/kas/show/{id}','KasController@getDataKas');
+
+
+    Route::post('/nota/upload','NotaController@UploadNota');
+
+  });

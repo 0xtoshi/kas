@@ -20,6 +20,14 @@ class CreateNotasTable extends Migration
             $table->text('lokasi_gambar');
             $table->timestamps();
         });
+
+        DB::table('notanes')->insert(
+            array(
+                'nama_gambar' => 'no_img.jpg',
+                'diskripsi' => 'no_img.jpg',
+                'lokasi_gambar' => 'no_img.jpg'
+            )
+        );
     }
 
     /**
