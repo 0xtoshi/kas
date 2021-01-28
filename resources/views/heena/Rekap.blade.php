@@ -133,7 +133,85 @@
                     </div><!--end row-->
                     <!-- end page title end breadcrumb -->
                     
-                                
+                    <div class="row">
+                        <div class="col-lg-6 col-xl">
+                            <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-calendar"></i> Rekap Tahunan</h5>
+                            </div>
+                            <div class="card-body">
+                                <form action="" method="GET">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                    <label for="tahun">Tahun</label>
+                                    <select name="tahun" id="tahun" class="custom-select">
+                                        <option value="2019" selected="">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                    </select>
+                                    
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" type="submit" data-original-title="" title="">Rekap</button>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+
+                            <div class="col-lg-6 col-xl">
+                            <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-calendar-alt"></i> Rekap Bulanan </h5>
+                            </div>
+                            <div class="card-body">
+                            <form action="" method="GET">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                    <label for="tahun">Bulan</label>
+                                    <select name="bulan" id="tahun" class="custom-select">
+                                        <option value="01" selected="">01 (Januari)</option>
+                                        <option value="02">02 (Februari)</option>
+                                        <option value="03">03 (Maret)</option>
+                                        <option value="04">04 (April)</option>
+                                        <option value="05">05 (Mei)</option>
+                                        <option value="06">06 (Juni)</option>
+                                        <option value="07">07 (Juli)</option>
+                                        <option value="08">08 (Agustus)</option>
+                                        <option value="09">09 (September)</option>
+                                        <option value="10">10 (Oktober)</option>
+                                        <option value="11">11 (November)</option>
+                                        <option value="12">12 (Desember)</option>
+                                    </select>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                    <label for="tahun">Tahun</label>
+                                    <select name="tahun" id="tahun" class="custom-select">
+                                        <option value="2019" selected="">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" type="submit" data-original-title="" title="">Rekap</button>
+                                </form>
+                            </div>
+                            </div>
+                    </div>
+
+
+                   
+                    
+                    
+                </div>
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -146,9 +224,6 @@
                                     </div>  <!--end row-->                                  
                                 </div><!--end card-header-->
                                 <div class="card-body">
-                                        <p> Silahkan Pilih Rekapan !</p>
-                                        <a href="/rekap/tahun" class="btn btn-primary"><i class="far fa-calendar"></i> Rekap Per Tahun </a>
-                                        <a href="/rekap/bulan" class="btn btn-primary"><i class="fas fa-calendar-alt"></i> Rekap Per Bulanan </a>
                                 
                                         <table id="export" class="table mb-0 table-bordered table-hover”">
                                         
@@ -198,7 +273,7 @@
 
                                                         <tr class="bg-success text-white">                                   
                                                             <td class="border-0 font-14"><b>Saldo Tersisa</b></td>
-                                                            <td class="border-0 font-14"><b>@currency($saldo_tersedia)</b></td>
+                                                            <td class="border-0 font-14"><b>@currency($total_kredit - $total_debit)</b></td>
                                                             <th colspan="2" class="border-0"></th>   
                                                         </tr>
                                             </tfoot>
