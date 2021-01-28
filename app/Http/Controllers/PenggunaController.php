@@ -84,7 +84,7 @@ class PenggunaController extends Controller
 
             return response()->json([
                 'error' => true, 'messages' => [ 'akun' => 'Role tidak sesuai dengan yang anda pilih!' ]
-            ], 200);
+            ], 400);
 
             exit;
         }
