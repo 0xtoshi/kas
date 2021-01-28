@@ -41,6 +41,7 @@ Route::get('/', function () {
     Route::get('/rekap/rekening','UiController@RekapRekeing');
     Route::get('/user','UiController@User');
     Route::get('/user/profile','UiController@Profile');
+
     
 
     /**
@@ -53,6 +54,7 @@ Route::get('/', function () {
     Route::post('/pengguna/hapus','PenggunaController@DeleteUser');
     Route::post('/pengguna/updateAll','PenggunaController@UpdateAll');
     Route::get('/pengguna/show/{id}','PenggunaController@getDataPengguna');
+    Route::get('/pengguna/logout','PenggunaController@Logout');
 
     Route::post('/rekening/tambah','RekeningController@TambahRekening');
     Route::post('/rekening/delete','RekeningController@DeleteRekening');

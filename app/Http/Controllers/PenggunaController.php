@@ -10,6 +10,8 @@ use Illuminate\Http\Request; // Load Request POST GET PUT Library
 
 use Illuminate\Support\Arr; //Load Library array
 use Carbon\Carbon;
+use Session;
+
 
 /**
  * Bebek Unch 22/01/2021
@@ -206,6 +208,12 @@ class PenggunaController extends Controller
 
         return Pengguna::where('id_pengguna', $id)->first();
 
+    }
+
+    public function Logout(Request $request)
+    {
+        Session::flush();
+        return redirect('/login');
     }
 
     public function UpdateAll(Request $request) { 

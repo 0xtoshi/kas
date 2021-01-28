@@ -89,7 +89,7 @@
                                 <a class="dropdown-item" href="/user/profile"><i data-feather="user" class="align-self-center icon-xs icon-dual mr-1"></i> Profile</a>
                                
                                 <div class="dropdown-divider mb-0"></div>
-                                <a class="dropdown-item" href="#"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
+                                <a class="dropdown-item" href="/pengguna/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
                             </div>
                         </li>
                     </ul><!--end topbar-nav-->
